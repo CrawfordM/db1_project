@@ -1,0 +1,11 @@
+0, 'ac dc', 'USA', 'January 3 1983', true
+1, 'Rush', 'USA', 'February 22 1985', true
+2, 'Billy Talent', 'June 4 2003', true
+3, 'Dave Brubeck', 'April 6 2008', false
+4, 'John Coltrane', 'October 9 2001', false
+5, 'Mozart', 'July 6 1775', false
+6, 'Beethoven', 'November 9 1795', false
+7, 'Tupac', 'December 20 1983', false
+8, 'Biggie smalls', 'September 12 1981', false
+9, 'Bob Marley', 'April 23 1986', false
+10, 'Ken Boothe', 'March 3 1989', false 
