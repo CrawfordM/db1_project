@@ -1,0 +1,8 @@
+guest_num, first_name, last_name, descr, topic, rating, slot_num
+0, 'Morgan', 'Goodall', 'Pianist', 'Pianos', 8, 0
+1, 'Bob', 'Mercer', 'Guitarist', 'World tours', 7, 2
+2, 'Eva', 'Bentley', 'Singer', 'Life story', 9, 3
+3, 'Janette', 'Melee', 'Drummer', 'Life story', 5, 6
+4, 'Brian', 'Christian', 'Manager', 'Managing a band', 8, 9
+5, 'Jordan', 'Foster', 'Flutist', 'Life story', 4, 10
+6, 'Valerie', 'Hoggan', 'Singer', 'Becoming a star', 7, 13
