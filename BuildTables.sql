@@ -78,21 +78,6 @@ nationality text,
 start_date text, 
 is_band boolean default false );
 
-create table project.band (
-band_num integer primary key,
-band_name text not null,
-start_year integer check (start_year >= 0),
-nationality text );
-
-create table project.artist (
-artist_num integer primary key,
-band_num integer references project.band(band_num),
-first_name text not null,
-last_name text,
-stage_name text,
-nationality text,
-birthday text );
-
 create table project.album (
 album_num integer primary key,
 album_type text,
