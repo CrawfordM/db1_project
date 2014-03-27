@@ -3,8 +3,13 @@
 -- if I reference song title in track table, then error. so leaving it out for now
 
 -- Changed:
+<<<<<<< HEAD
 -- Artist contains band attribute
 -- alum has record_year integer instead of data
+=======
+-- Artists are part of 0 or 1 bands
+-- Only artists can "perform" songs, not bands (at least not directly)
+>>>>>>> 227440bd9dff1bccb090054f0684c23edc10fa79
 
 -- Uncomment to reset tables:
 -- drop table project.radiohost;
@@ -63,6 +68,7 @@ topic text,
 rating integer default 0 check (rating >= 0),
 slot_num integer references project.timeslot(slot_num) on delete restrict );
 
+<<<<<<< HEAD
 -- removed bands
 -- create table project.band (
 -- band_num integer primary key,
@@ -77,12 +83,32 @@ pname text,
 nationality text,
 start_date text, 
 is_band boolean default false );
+=======
+create table project.band (
+band_num integer primary key,
+band_name text not null,
+start_year integer check (start_year >= 0),
+nationality text );
+
+create table project.artist (
+artist_num integer primary key,
+band_num integer references project.band(band_num),
+first_name text not null,
+last_name text,
+stage_name text,
+nationality text,
+birthday text );
+>>>>>>> 227440bd9dff1bccb090054f0684c23edc10fa79
 
 create table project.album (
 album_num integer primary key,
 album_type text,
 label text,
+<<<<<<< HEAD
 recording_year integer );
+=======
+recording_date text );
+>>>>>>> 227440bd9dff1bccb090054f0684c23edc10fa79
 
 create table project.song (
 song_num integer primary key,
@@ -90,7 +116,11 @@ title text not null,
 cancon boolean default false,
 instrumental boolean default false,
 album_num integer references project.album(album_num) on delete restrict,
+<<<<<<< HEAD
 performer_num integer references project.performer(performer_num) on delete restrict );
+=======
+artist_num integer references project.artist(artist_num) on delete restrict );
+>>>>>>> 227440bd9dff1bccb090054f0684c23edc10fa79
 
 create table project.track (
 track_num integer primary key,
@@ -98,5 +128,8 @@ title text,
 start_time integer check (start_time >= 0),
 end_time integer check (end_time >= 0),
 track_type text,
+<<<<<<< HEAD
 sheet_num integer references project.playsheet(sheet_num) on delete restrict,
+=======
+>>>>>>> 227440bd9dff1bccb090054f0684c23edc10fa79
 song_num integer references project.song(song_num) on delete restrict );
