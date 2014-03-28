@@ -1,23 +1,25 @@
--- Questions:
+﻿-- Questions:
 -- track title = song title?
 -- if I reference song title in track table, then error. so leaving it out for now
 
 -- Changed:
--- Artist contains band attribute
--- alum has record_year integer instead of data
+-- Artist/band replaced by "performer" table
+-- Performer contains is_band attribute, there is no band table
+-- alum has record_year integer instead of record_date
 
 -- Uncomment to reset tables:
--- drop table project.radiohost;
--- drop table project.show;
--- drop table project.hostshow;
--- drop table project.playsheet;
--- drop table project.timeslot;
--- drop table project.guest;
--- drop table project.band;
--- drop table project.artist;
--- drop table project.album;
--- drop table project.song;
--- drop table project.track;
+drop table project.radiohost cascade;
+drop table project.show cascade;
+drop table project.hostshow;
+drop table project.playsheet cascade;
+drop table project.timeslot cascade;
+drop table project.guest;
+-- drop table project.band cascade;
+-- drop table project.artist cascade;
+drop table project.album cascade;
+drop table project.performer cascade;
+drop table project.song cascade;
+drop table project.track;
 
 create table project.radiohost (
 emp_num integer primary key,
@@ -100,3 +102,12 @@ end_time integer check (end_time >= 0),
 track_type text,
 sheet_num integer references project.playsheet(sheet_num) on delete restrict,
 song_num integer references project.song(song_num) on delete restrict );
+
+-- COPY radiohost FROM 'csv_files/radiohost.csv' DELIMITER ',' CSV;
+insert into project.radiohost values
+(0, 'Jane', 'Palmer', 'Pama', 'January 11 1990', 7, 'June 1 2007', 45000),
+(1, 'Carl', 'Tyson', 'Crazy Carl', 'May 5 1985', 8, 'December 6 2009', 42000),
+(2, 'Brita', 'Fearson', 'Bee', 'April 12 1995', 9, 'April 6 2012', 33000),
+(3, 'John', 'Kramer', 'JK', 'March 4 1978', 6, 'November 28 2005', 43000),
+(4, 'Kat', 'Barry', 'Katy', 'February 24 1992', 8, 'February 17 2011', 47000),
+(5, 'Barb', 'Steinberg', 'Barbie', 'October 7 1984', 7, 'July 4 2007', 44000);
