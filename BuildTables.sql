@@ -20,7 +20,7 @@ drop schema project cascade;
 -- drop table project.song cascade;
 -- drop table project.track;
 
-create schema project AUTHORIZATION rmurr085;
+create schema project;
 set search_path='project';
 
 create table project.radiohost (
@@ -245,6 +245,3 @@ insert into project.song values
 (46,'Dear Mama',false,false,5,7),
 (47,'It Aint Easy',false,false,5,7);
 -- insert into project.track values ;
-
-select *
-from project.guest
