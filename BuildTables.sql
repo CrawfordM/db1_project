@@ -7,17 +7,21 @@
 -- Performer contains is_band attribute, there is no band table
 -- alum has record_year integer instead of record_date
 
--- Uncomment to reset tables:
-drop table project.radiohost cascade;
-drop table project.show cascade;
-drop table project.hostshow;
-drop table project.playsheet cascade;
-drop table project.timeslot cascade;
-drop table project.guest;
-drop table project.album cascade;
-drop table project.performer cascade;
-drop table project.song cascade;
-drop table project.track;
+-- Uncomment to reset schema/tables:
+drop schema project cascade;
+-- drop table project.radiohost cascade;
+-- drop table project.show cascade;
+-- drop table project.hostshow;
+-- drop table project.playsheet cascade;
+-- drop table project.timeslot cascade;
+-- drop table project.guest;
+-- drop table project.album cascade;
+-- drop table project.performer cascade;
+-- drop table project.song cascade;
+-- drop table project.track;
+
+create schema project AUTHORIZATION rmurr085;
+set search_path='project';
 
 create table project.radiohost (
 emp_num integer primary key,
@@ -193,3 +197,6 @@ insert into project.album values
 -- TO DO
 -- insert into project.song values ;
 -- insert into project.track values ;
+
+select *
+from project.guest
