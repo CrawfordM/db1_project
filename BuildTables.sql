@@ -186,7 +186,7 @@ insert into project.performer values
 insert into project.album values
 (0, 'rock', 'Back in Black', 1987),
 (1, 'rock', 'Snakes & Arrows', 2007),
-(2, 'jazz', 'Dead Silence', 2012),
+(2, 'rock', 'Dead Silence', 2012),
 (3, 'jazz', 'Take Five', 1959),
 (4, 'jazz', 'Cookin', 1956),
 (5, 'hiphop', 'Me Against the World', 1995),
@@ -195,7 +195,55 @@ insert into project.album values
 (8, 'reggae', 'Journey', 2012 );
 
 -- TO DO
--- insert into project.song values ;
+--song(songID,title,cancon,instrumental,albumID,artistID)
+insert into project.song values
+(01,'Hells Bells',false,false,0,0),
+(02,'Shoot to Thrill',false,false,0,0),
+(03,'What Do You Do for Money Honey',false, false,0,0),
+(04,'Given the Dog a Bone',false,false,0,0),
+(05,'Let Me Put My Love Into You',false,false,0,0),
+(06,'Back In Black',false,false,0,0),
+(07,'You Shook Me All Night Long',false,false,0,0),
+(08,'Have a Drink on Me',false,false,0,0),
+(09,'Shake a Leg',false,false,0,0),
+(10,'Rock and Roll Aint Noise Pollution',false,false,0,0),
+(11,'Far Cry',true,false,1,1),
+(12,'Armor and Sword',true,false,1,1),
+(13,'Workin Them Angels',true,false,1,1),
+(14,'The Larger Bowl',true,false,1,1),
+(15,'Spindrift',true,false,1,1),
+(16,'The Main Monkey Business',true,false,1,1),
+(17,'The Way the Wind Blows',true,false,1,1),
+(18,'Hope',true,false,1,1),
+(19,'Faithless',true,false,1,1),
+(20,'Bravest Face',true,false,1,1),
+(21,'Good News First',true,false,1,1),
+(22,'Malignant Narcissim',true,false,1,1),
+(23,'We Hold On',true,false,1,1),
+(24,'Lonely Road',true,false,2,2),
+(25,'Viking Death March',true,false,2,2),
+(26,'Surprise Surprise',true,false,2,2),
+(27,'Runnin Across the Tracks',true,false,2,2),
+(28,'Love Was Still Around',true,false,2,2),
+(29,'Stand Up and Run',true,false,2,2),
+(30,'Crooked Minds',true,false,2,2),
+(31,'Man Alive!',true,false,2,2),
+(32,'Hanging by a Thread',true,false,2,2),
+(33,'Cure for the Enemy',true,false,2,2),
+(34,'Dont Count on the Wicked',true,false,2,2),
+(35,'Show Me the Way',true,false,2,2),
+(36,'Swallowed Up by the Ocean',true,false,2,2),
+(37,'Dead Silence',true,false,2,2),
+(38,'Intro',false,false,5,7),
+(39,'If I Die 2Nite',false,false,5,7),
+(40,'Me Against the World',false,false,5,7),
+(41,'So Many Tears',false,false,5,7),
+(42,'Temptaions',false,false,5,7),
+(43,'Young N****',false,false,5,7),
+(44,'Heavy in the Game',false,false,5,7),
+(45,'Lord Knows',false,false,5,7),
+(46,'Dear Mama',false,false,5,7),
+(47,'It Aint Easy',false,false,5,7);
 -- insert into project.track values ;
 
 select *
