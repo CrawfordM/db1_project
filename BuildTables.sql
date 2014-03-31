@@ -41,8 +41,8 @@ category text );
 
 create table project.hostshow (
 contract_num integer primary key,
-emp_num integer references project.radiohost(emp_num) on delete restrict,
-show_num integer references project.show(show_num) on delete restrict,
+emp_num integer references project.radiohost(emp_num) on delete cascade,
+show_num integer references project.show(show_num) on delete cascade,
 host_start_year integer,
 host_start_month text check (host_start_month in('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')) );
 
@@ -56,7 +56,7 @@ slot_num integer primary key,
 start_time integer not null check (start_time >= 0),
 end_time integer not null check(end_time >= 0),
 show_num integer references project.show(show_num) on delete restrict,
-sheet_num integer references project.playsheet(sheet_num) on delete restrict );
+sheet_num integer references project.playsheet(sheet_num) on delete cascade );
 
 create table project.guest (
 guest_num integer primary key,
@@ -65,7 +65,7 @@ last_name text not null,
 descr text,
 topic text,
 rating integer default 0 check (rating >= 0),
-slot_num integer references project.timeslot(slot_num) on delete restrict );
+slot_num integer references project.timeslot(slot_num) on delete cascade );
 
 -- removed bands
 -- create table project.band (
@@ -94,7 +94,7 @@ title text not null,
 cancon boolean default false,
 instrumental boolean default false,
 album_num integer references project.album(album_num) on delete restrict,
-performer_num integer references project.performer(performer_num) on delete restrict );
+performer_num integer references project.performer(performer_num) on delete cascade );
 
 create table project.track (
 track_num integer primary key,
@@ -102,8 +102,8 @@ title text,
 start_time integer check (start_time >= 0),
 end_time integer check (end_time >= 0),
 track_type text,
-sheet_num integer references project.playsheet(sheet_num) on delete restrict,
-song_num integer references project.song(song_num) on delete restrict );
+sheet_num integer references project.playsheet(sheet_num) on delete cascade,
+song_num integer references project.song(song_num) on delete cascade );
 
 insert into project.radiohost values
 (0, 'Jane', 'Palmer', 'Pama', 'January 11 1990', 7, 'June 1 2007', 45000),
@@ -194,8 +194,6 @@ insert into project.album values
 (7, 'reggae', 'Exodus', 1977),
 (8, 'reggae', 'Journey', 2012 );
 
--- TO DO
---song(songID,title,cancon,instrumental,albumID,artistID)
 insert into project.song values
 (01,'Hells Bells',false,false,0,0),
 (02,'Shoot to Thrill',false,false,0,0),
@@ -244,7 +242,7 @@ insert into project.song values
 (45,'Lord Knows',false,false,5,7),
 (46,'Dear Mama',false,false,5,7),
 (47,'It Aint Easy',false,false,5,7);
--- insert into project.track values ;
+
 insert into project.track values
 (01,'Hells Bells',0,5,'hit',0,01),
 (02,'Shoot to Thrill',0,5,'hit',1,02),
